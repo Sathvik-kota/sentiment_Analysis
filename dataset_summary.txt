@@ -1,0 +1,7 @@
+Training set label counts:
+  Positive (label 1): 4083
+  Negative (label 0): 3917
+
+Test set label counts:
+  Positive (label 1): 1018
+  Negative (label 0): 982
