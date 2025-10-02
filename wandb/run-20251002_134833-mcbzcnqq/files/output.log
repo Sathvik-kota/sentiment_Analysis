@@ -1,0 +1,60 @@
+Started run with config: {'learning_rate': 1.2764065824334371e-05, 'warmup_ratio': 0.14326712943618436, 'scheduler_type': 'reduce_on_plateau', 'patience': 2, 'factor': 0.3761607825746237, 'weight_decay': 0.06006792378729758, 'num_train_epochs': 2, 'per_device_batch_size': 8, 'max_length': 128}
+Loaded rows: 9999
+✅ DistilBERT Preprocessor initialized for uncased model
+📚 Loaded 61 slang terms
+😊 Loaded 29 emoticons
+✏️ Loaded 35 typo corrections
+🔄 Processing 9999 texts in batches of 1000
+   Processed 1000/9999 texts...
+✅ Batch processing completed!
+
+=== Fold 1/5 ===
+Class weights: [0.9998611 0.9998611 1.0002779]
+Some weights of DistilBertForSequenceClassification were not initialized from the model checkpoint at distilbert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight', 'pre_classifier.bias', 'pre_classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/tmp/ipython-input-515125158.py:111: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `WeightedTrainer.__init__`. Use `processing_class` instead.
+  super().__init__(*args, **kwargs)
+[34m[1mwandb[0m: [33mWARNING[0m Config item 'max_length' was locked by 'sweep' (ignored update).
+[34m[1mwandb[0m: [33mWARNING[0m Config item 'learning_rate' was locked by 'sweep' (ignored update).
+[34m[1mwandb[0m: [33mWARNING[0m Config item 'weight_decay' was locked by 'sweep' (ignored update).
+[34m[1mwandb[0m: [33mWARNING[0m Config item 'num_train_epochs' was locked by 'sweep' (ignored update).
+[34m[1mwandb[0m: [33mWARNING[0m Config item 'warmup_ratio' was locked by 'sweep' (ignored update).
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 1285, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/queue.py", line 179, in get
+    raise Empty
+_queue.Empty
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/wandb/agents/pyagent.py", line 297, in _run_job
+    self._function()
+  File "/tmp/ipython-input-515125158.py", line 255, in run_single_config
+    trainer.train()
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 2328, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 2623, in _inner_training_loop
+    batch_samples, num_items_in_batch = self.get_batch_samples(epoch_iterator, num_batches, args.device)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/trainer.py", line 5581, in get_batch_samples
+    batch_samples.append(next(epoch_iterator))
+                         ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/data_loader.py", line 579, in __iter__
+    next_batch = next(dataloader_iter)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 734, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 1492, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 1444, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 1298, in _try_get_data
+    raise RuntimeError(
+RuntimeError: DataLoader worker (pid(s) 2640, 2641) exited unexpectedly

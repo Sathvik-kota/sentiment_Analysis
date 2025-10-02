@@ -1,0 +1,39 @@
+{
+  "os":  "Linux-6.6.97+-x86_64-with-glibc2.35",
+  "python":  "CPython 3.12.11",
+  "startedAt":  "2025-10-02T13:48:33.971063Z",
+  "program":  "Untitled2.ipynb",
+  "git":  {
+    "remote":  "https://Sathvik-kota:@github.com/Sathvik-kota/sentiment_Analysis.git",
+    "commit":  "3ec19d8ada78caa9efec4b4682d7f97189154136"
+  },
+  "email":  "kotasathvik25@gmail.com",
+  "root":  "/content/sentiment_Analysis",
+  "host":  "c421a3882eef",
+  "executable":  "/usr/bin/python3",
+  "colab":  "https://colab.research.google.com/notebook#fileId=1P64VNy4VlSO7DgPMFFQTDl0mrzdXgITl",
+  "cpu_count":  1,
+  "cpu_count_logical":  2,
+  "gpu":  "Tesla T4",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "120942624768",
+      "used":  "42502471680"
+    }
+  },
+  "memory":  {
+    "total":  "13605658624"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla T4",
+      "memoryTotal":  "16106127360",
+      "cudaCores":  2560,
+      "architecture":  "Turing",
+      "uuid":  "GPU-1257106e-690f-a6ea-ad99-0d87dfe928ec"
+    }
+  ],
+  "cudaVersion":  "12.4",
+  "writerId":  "k9qusceb4g9vf9d6sx3hsgy3j9srqd1n"
+}
